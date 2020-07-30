@@ -44,34 +44,35 @@ export class CreateSprintComponent implements OnInit {
 
      
     })
+    console.log(this.selected)
   }
   save(){
     console.log(this.sprintForm,this.selected)
-    if(this.sprintForm.controls['name'].status=='VALID' && this.selected.length != 0){
+    // if(this.sprintForm.controls['name'].status=='VALID' && this.selected.length != 0){
       
-      this.projectService.createSprint(this.sprintForm.value).subscribe(
-        data =>{
-          this.id=data
-          this.selected.map(idTask =>{
+    //   this.projectService.createSprint(this.sprintForm.value).subscribe(
+    //     data =>{
+    //       this.id=data
+    //       this.selected.map(idTask =>{
            
-            let i
-            if(this.availableTasks!=undefined)
-            for(i = 0; i < this.availableTasks.length; i++){
-              if (this.availableTasks[i].id === idTask){
-                 this.availableTasks.splice(i, 1); }}
-            //this.availableTasks.splice(idTask[1],1)
-            this.projectService.addTaskToSprint(this.id,idTask).subscribe()
-          })
+    //         let i
+    //         if(this.availableTasks!=undefined)
+    //         for(i = 0; i < this.availableTasks.length; i++){
+    //           if (this.availableTasks[i].id === idTask){
+    //              this.availableTasks.splice(i, 1); }}
+    //         //this.availableTasks.splice(idTask[1],1)
+    //         this.projectService.addTaskToSprint(this.id,idTask).subscribe()
+    //       })
           
-          this.sprintForm = new FormGroup({
-            name: new FormControl('', Validators.required),
-            description: new FormControl(''),
-            project: new FormControl(this.projectId),
-          })
-        })
+    //       this.sprintForm = new FormGroup({
+    //         name: new FormControl('', Validators.required),
+    //         description: new FormControl(''),
+    //         project: new FormControl(this.projectId),
+    //       })
+    //     })
         
        
-    }
+    // }
    
   }
 
