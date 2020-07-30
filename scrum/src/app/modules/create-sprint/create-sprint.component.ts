@@ -25,7 +25,7 @@ export class CreateSprintComponent implements OnInit {
       data =>{
         console.log(data)
 
-        this.availableTasks=data
+        this.availableTasks=data  
       })
 
       this.sprintForm = new FormGroup({
@@ -47,18 +47,14 @@ export class CreateSprintComponent implements OnInit {
   }
   save(){
     if(this.sprintForm.controls['name'].status=='VALID' && this.selected.length != 0){
-      //if(this.selected.length==this.availableTasks.length) this.availableTasks=[]
-      /*this.selected.map(idTask =>{
-        this.availableTasks.splice(idTask[1],1,"")
-      })*/
       
-
       this.projectService.createSprint(this.sprintForm.value).subscribe(
         data =>{
           this.id=data
           this.selected.map(idTask =>{
            
             let i
+            if(this.availableTasks!=undefined)
             for(i = 0; i < this.availableTasks.length; i++){
               if (this.availableTasks[i].id === idTask){
                  this.availableTasks.splice(i, 1); }}
