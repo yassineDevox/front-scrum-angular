@@ -23,7 +23,6 @@ export class AuthService {
   constructor(private http: HttpClient, private tokenStorage: TokenStorageService) {
     this.currentUserSubject = new BehaviorSubject<any>(sessionStorage.getItem(TOKEN_KEY));
     this.currentUser = this.currentUserSubject.asObservable();
-
   }
   url = 'https://scrum-app-v0.herokuapp.com/api/auth/'
 

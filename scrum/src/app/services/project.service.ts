@@ -14,10 +14,10 @@ const httpOptions = {
 export class ProjectService {
 
   constructor(private http:HttpClient,  private tokenStorage:TokenStorageService) { }
-  URL1 = 'http://localhost:8084/api/project/';
-  URL2 = 'http://localhost:8084/userStory/';
-  URL3 = 'http://localhost:8084/taches/';
-  URL4 = 'http://localhost:8084/sprints/';
+  URL1 = 'https://scrum-app-v0.herokuapp.com/api/project/';
+  URL2 = 'https://scrum-app-v0.herokuapp.com/userStory/';
+  URL3 = 'https://scrum-app-v0.herokuapp.com/taches/';
+  URL4 = 'https://scrum-app-v0.herokuapp.com/sprints/';
 
 
   userConnecter = this.tokenStorage.getUser();
