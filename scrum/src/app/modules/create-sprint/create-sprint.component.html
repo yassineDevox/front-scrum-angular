@@ -21,9 +21,9 @@
                             </mat-form-field>
 
                             <p>Select tasks *</p>
-                            <div *ngIf="selected.length == 0 && availableTasks.length==0" style="color: red">No task
+                            <div *ngIf="selected?.length == 0 && availableTasks?.length==0" style="color: red">No task
                                 available. You can't create new sprint </div>
-                            <div *ngIf="selected.length == 0 && availableTasks.length!=0" style="color: red"> You
+                            <div *ngIf="selected?.length == 0 && availableTasks?.length!=0" style="color: red"> You
                                 should select at least one task</div>
 
 
