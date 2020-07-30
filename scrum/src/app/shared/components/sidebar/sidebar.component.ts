@@ -37,7 +37,7 @@ export class SidebarComponent implements OnInit {
     this.userService.getUser(users.id).subscribe(data => {
       this.users = data;
 
-      this.img = { src: 'http://localhost:8084/user/photo/' + users.id }
+      this.img = { src: 'https://scrum-app-v0.herokuapp.com/user/photo/' + users.id }
     })
 
   }
