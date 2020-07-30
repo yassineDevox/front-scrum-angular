@@ -46,6 +46,7 @@ export class CreateSprintComponent implements OnInit {
     })
   }
   save(){
+    console.log(this.sprintForm,this.selected)
     if(this.sprintForm.controls['name'].status=='VALID' && this.selected.length != 0){
       
       this.projectService.createSprint(this.sprintForm.value).subscribe(
